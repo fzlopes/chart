@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
+use ConsoleTVs\Charts\Facades\Charts;
 use Illuminate\Http\Request;
-use Charts;
+
 
 class HomeController extends Controller
 {
@@ -24,7 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $charts = Charts::create('line', 'highcharts')
-                ->setTitle("")
+        $chart = Charts::create('line', 'highcharts')
+                    ->title('My nice chart')
+                    ->labels(['First', 'Second', 'Third'])
+                    ->values([5,10,20])
+                    ->dimensions(0,500);
+        return view('home',compact('chart'));
     }
 }

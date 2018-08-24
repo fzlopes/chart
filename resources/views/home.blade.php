@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    {!! $chart->render() !!}
                 </div>
             </div>
         </div>
