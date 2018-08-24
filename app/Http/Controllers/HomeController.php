@@ -27,10 +27,11 @@ class HomeController extends Controller
     public function index()
     {
         $chart = Charts::create('line', 'highcharts')
-                    ->title('My nice chart')
-                    ->labels(['First', 'Second', 'Third'])
-                    ->values([5,10,20])
-                    ->dimensions(0,500);
+                    ->title('Comparação Mensal (Últimos 4 anos)')
+                    ->labels(['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'])
+                    ->values([5,10,20,13,16,25,12,17,7,9,6,10])
+                    ->dimensions(1000,500)
+                    ->responsive(true);
         return view('home',compact('chart'));
     }
 }
