@@ -73,6 +73,7 @@ class ChartController extends Controller
             ->elementLabel("Total")
             ->dimensions(1000, 500)
             ->responsive(false)
+            ->language('pt-BR')
             ->lastByMonth(12);
 
         return view('charts',compact('chart'));

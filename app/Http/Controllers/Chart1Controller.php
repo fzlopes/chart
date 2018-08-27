@@ -56,8 +56,7 @@ class Chart1Controller extends Controller
             ->labels(['jan', 'fev', 'mar', 'abr','mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'])
             ->responsive(true);
 
-
-        return view('charts1',compact('chart'));
+          return view('charts1',compact('chart'));
 
     }
 }
