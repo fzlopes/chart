@@ -36,7 +36,7 @@ class Chart1Controller extends Controller
 //            ->labels(['One', 'Two', 'Three']);
 
 
-        $chart = Charts::multi('bar', 'highcharts')
+        $chart2 = Charts::multi('bar', 'highcharts')
             // Setup the chart settings
             ->title("Comparação mensal(Últimos 4 anos)")
             ->elementLabel('')
@@ -54,6 +54,40 @@ class Chart1Controller extends Controller
             ->dataset('Média',[40000,43000,39000,48000,41000,43000,46200,42900,50000,38000,42200,47000])
             // Setup what the values mean
             ->labels(['jan', 'fev', 'mar', 'abr','mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'])
+            ->responsive(true);
+
+        $chart1 = Charts::multi('bar', 'highcharts')
+            // Setup the chart settings
+            ->title("Faturamento Total vs Média Faturada")
+            ->elementLabel('')
+            // A dimension of 0 means it will take 100% of the space
+            ->dimensions(0, 400) // Width x Height
+            // This defines a preset of colors already done:)
+            ->template("material")
+            // You could always set them manually
+            ->colors(['#F4A460', '#F44336', '#FFC107','#FF540','#FF0000'])
+            // Setup the diferent datasets (this is a multi chart)
+            ->dataset('Faturamento', [50000,47000,43000,41000,39000,45000])
+            ->dataset('Média', [38000,45000,37900,49000,38990,40000])
+            // Setup what the values mean
+            ->labels(['1°Triênio', '2°Triênio', '3°Triênio', '4°Triênio','5°Triênio', 'Últimos 3 anos'])
+            ->responsive(true);
+
+        $chart = Charts::multi('bar', 'highcharts')
+            // Setup the chart settings
+            ->title("Faturamento Total vs Média Faturada")
+            ->elementLabel('')
+            // A dimension of 0 means it will take 100% of the space
+            ->dimensions(0, 400) // Width x Height
+            // This defines a preset of colors already done:)
+            ->template("material")
+            // You could always set them manually
+            ->colors(['#F4A460', '#F44336', '#FFC107','#FF540','#FF0000'])
+            // Setup the diferent datasets (this is a multi chart)
+            ->dataset('Faturamento', [50000,47000,43000,41000,39000,45000])
+            ->dataset('Média', [38000,45000,37900,49000,38990,40000])
+            // Setup what the values mean
+            ->labels(['1°Triênio', '2°Triênio', '3°Triênio', '4°Triênio','5°Triênio', 'Últimos 3 anos'])
             ->responsive(true);
 
           return view('charts1',compact('chart'));
