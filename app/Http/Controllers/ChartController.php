@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Query;
 use Illuminate\Http\Request;
-use ConsoleTVs\Charts\Facades\Charts;
+use Charts;
 
 class ChartController extends Controller
 {
@@ -75,7 +75,7 @@ class ChartController extends Controller
             ->responsive(false)
             ->lastByMonth(12);
 
-        return view('chart',compact('chart'));
+        return view('charts',compact('chart'));
 
     }
 }

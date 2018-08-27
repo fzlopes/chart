@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use ConsoleTVs\Charts\Facades\Charts;
+use Charts;
 use Illuminate\Http\Request;
 
 
